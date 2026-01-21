@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gourmet Express | Premium Food Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="animations.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span class="logo-text">Gourmet<span class="logo-highlight">Express</span></span>
+            </div>
+            
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#restaurants" class="nav-link">Restaurants</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#offers" class="nav-link">Offers</a>
+                <a href="#track" class="nav-link">Track Order</a>
+            </div>
+            
+            <div class="nav-actions">
+                <div class="location-selector">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <select id="citySelect">
+                        <option value="colombo">Colombo</option>
+                        <option value="kandy">Kandy</option>
+                        <option value="galle">Galle</option>
+                        <option value="negombo">Negombo</option>
+                    </select>
+                </div>
+                <button class="btn-icon cart-btn" data-count="3">
+                    <i class="fas fa-shopping-bag"></i>
+                </button>
+                <button class="btn-primary btn-sm">Sign In</button>
+            </div>
+            
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">Craving Something</span>
+                <span class="title-line highlight">Delicious?</span>
+            </h1>
+            <p class="hero-subtitle">Premium food delivery from the best restaurants. Experience luxury dining at home.</p>
+            
+            <div class="hero-search">
+                <div class="search-container">
+                    <i class="fas fa-map-marker-alt search-icon"></i>
+                    <input type="text" placeholder="Enter your delivery address" class="search-input">
+                    <button class="btn-primary search-action">
+                        <i class="fas fa-search"></i>
+                        Find Food
+                    </button>
+                </div>
+                <div class="search-suggestions">
+                    <span class="suggestion-tag">📍 Colombo 03</span>
+                    <span class="suggestion-tag">📍 Kandy City</span>
+                    <span class="suggestion-tag">📍 Galle Fort</span>
+                    <span class="suggestion-tag">📍 Negombo Beach</span>
+                </div>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">250+</span>
+                    <span class="stat-label">Premium Restaurants</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">15-30</span>
+                    <span class="stat-label">Minutes Delivery</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9</span>
+                    <span class="stat-label">Average Rating</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="floating-card card-1">
+                <div class="food-price">LKR 2,500</div>
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Premium Burger">
+                <div class="card-badge">🔥 Popular</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="food-price">LKR 1,800</div>
+                <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Fresh Salad">
+                <div class="card-badge">🌱 Healthy</div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="food-price">LKR 1,200</div>
+                <img src="https://images.unsplash.com/photo-1559715745-e1b33a271c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dessert">
+                <div class="card-badge">🍰 Sweet</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Restaurants -->
+    <section class="restaurants" id="restaurants">
+        <div class="section-header">
+            <h2 class="section-title">Featured <span class="highlight">Restaurants</span></h2>
+            <p class="section-subtitle">Premium dining experiences delivered</p>
+        </div>
+        
+        <div class="restaurants-grid">
+            <!-- Restaurant 1 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="The Golden Fork">
+                    <div class="restaurant-badge premium">
+                        <i class="fas fa-crown"></i>
+                        Premium
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                
+                <div class="restaurant-info">
+                    <div class="restaurant-header">
+                        <h3 class="restaurant-title">The Golden Fork</h3>
+                        <div class="restaurant-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                            <span class="rating-count">(248)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-utensils"></i>
+                            Fine Dining
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            25-40 min
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            Free Delivery
+                        </span>
+                    </div>
+                    
+                    <div class="restaurant-footer">
+                        <div class="price-range">
+                            <span class="price-label">Per Meal:</span>
+                            <span class="price-lkr">LKR 1,500 - 3,500</span>
+                        </div>
+                        <button class="btn-outline btn-sm">
+                            View Menu
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 2 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Spice Symphony">
+                    <div class="restaurant-badge trending">
+                        <i class="fas fa-fire"></i>
+                        Trending
+                    </div>
+                    <button class="favorite-btn active">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                </div>
+                
+                <div class="restaurant-info">
+                    <div class="restaurant-header">
+                        <h3 class="restaurant-title">Spice Symphony</h3>
+                        <div class="restaurant-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                            <span class="rating-count">(425)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-pepper-hot"></i>
+                            Sri Lankan
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            15-30 min
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            20% OFF
+                        </span>
+                    </div>
+                    
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <span>Kottu Roti</span>
+                            <span class="item-price">LKR 850</span>
+                        </div>
+                        <div class="menu-item">
+                            <span>Hoppers</span>
+                            <span class="item-price">LKR 650</span>
+                        </div>
+                        <div class="menu-item">
+                            <span>Lunu Miris</span>
+                            <span class="item-price">LKR 950</span>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-footer">
+                        <div class="price-range">
+                            <span class="price-label">Per Meal:</span>
+                            <span class="price-lkr">LKR 600 - 1,200</span>
+                        </div>
+                        <button class="btn-primary btn-sm order-btn" data-restaurant="Spice Symphony">
+                            <i class="fas fa-shopping-cart"></i>
+                            Order Now
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Restaurant 3 -->
+            <div class="restaurant-card">
+                <div class="restaurant-image">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Seafood Delight">
+                    <div class="restaurant-badge new">
+                        <i class="fas fa-bolt"></i>
+                        New
+                    </div>
+                    <button class="favorite-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+                
+                <div class="restaurant-info">
+                    <div class="restaurant-header">
+                        <h3 class="restaurant-title">Seafood Delight</h3>
+                        <div class="restaurant-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                            <span class="rating-count">(189)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="restaurant-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-fish"></i>
+                            Seafood
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-clock"></i>
+                            30-45 min
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            Free Delivery
+                        </span>
+                    </div>
+                    
+                    <div class="restaurant-footer">
+                        <div class="price-range">
+                            <span class="price-label">Per Meal:</span>
+                            <span class="price-lkr">LKR 2,000 - 4,500</span>
+                        </div>
+                        <button class="btn-outline btn-sm">
+                            View Menu
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Food Categories -->
+    <section class="categories" id="categories">
+        <div class="section-header">
+            <h2 class="section-title">Browse by <span class="highlight">Category</span></h2>
+            <p class="section-subtitle">Discover your favorite cuisine</p>
+        </div>
+        
+        <div class="categories-grid">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-pepper-hot"></i>
+                </div>
+                <h3 class="category-title">Sri Lankan</h3>
+                <p class="category-count">68 restaurants</p>
+                <div class="category-price-range">
+                    <small>LKR 400 - 2,000</small>
+                </div>
+            </div>
+            
+            <div class="category-card active">
+                <div class="category-icon">
+                    <i class="fas fa-hamburger"></i>
+                </div>
+                <h3 class="category-title">Fast Food</h3>
+                <p class="category-count">45 restaurants</p>
+                <div class="category-price-range">
+                    <small>LKR 500 - 1,500</small>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-pizza-slice"></i>
+                </div>
+                <h3 class="category-title">Italian</h3>
+                <p class="category-count">28 restaurants</p>
+                <div class="category-price-range">
+                    <small>LKR 1,200 - 3,000</small>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3 class="category-title">Healthy</h3>
+                <p class="category-count">32 restaurants</p>
+                <div class="category-price-range">
+                    <small>LKR 800 - 2,500</small>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-mug-hot"></i>
+                </div>
+                <h3 class="category-title">Desserts</h3>
+                <p class="category-count">27 restaurants</p>
+                <div class="category-price-range">
+                    <small>LKR 300 - 1,200</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Items -->
+    <section class="popular-items">
+        <div class="section-header">
+            <h2 class="section-title">Popular <span class="highlight">Food Items</span></h2>
+            <p class="section-subtitle">Most ordered items this week</p>
+        </div>
+        
+        <div class="items-grid">
+            <!-- Item 1 -->
+            <div class="food-item-card">
+                <div class="food-item-image">
+                    <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Rice & Curry">
+                    <button class="add-to-cart-btn" data-item="Rice & Curry" data-price="950">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="food-item-info">
+                    <h4 class="food-item-title">Special Rice & Curry</h4>
+                    <p class="food-item-desc">Traditional Sri Lankan rice with 3 curries</p>
+                    <div class="food-item-footer">
+                        <div class="item-price">
+                            <span class="current-price">LKR 950</span>
+                            <span class="original-price">LKR 1,200</span>
+                        </div>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.7</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 2 -->
+            <div class="food-item-card">
+                <div class="food-item-image">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03246963d9d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Kottu Roti">
+                    <button class="add-to-cart-btn" data-item="Chicken Kottu" data-price="850">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="food-item-info">
+                    <h4 class="food-item-title">Chicken Kottu Roti</h4>
+                    <p class="food-item-desc">Freshly chopped roti with chicken & vegetables</p>
+                    <div class="food-item-footer">
+                        <div class="item-price">
+                            <span class="current-price">LKR 850</span>
+                        </div>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 3 -->
+            <div class="food-item-card">
+                <div class="food-item-image">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Burger">
+                    <button class="add-to-cart-btn" data-item="Premium Burger" data-price="1250">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="food-item-info">
+                    <h4 class="food-item-title">Premium Burger</h4>
+                    <p class="food-item-desc">Angus beef with special sauce & fries</p>
+                    <div class="food-item-footer">
+                        <div class="item-price">
+                            <span class="current-price">LKR 1,250</span>
+                        </div>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Item 4 -->
+            <div class="food-item-card">
+                <div class="food-item-image">
+                    <img src="https://images.unsplash.com/photo-1559715745-e1b33a271c8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Dessert">
+                    <button class="add-to-cart-btn" data-item="Watalappan" data-price="650">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <div class="food-item-info">
+                    <h4 class="food-item-title">Watalappan</h4>
+                    <p class="food-item-desc">Traditional Sri Lankan coconut pudding</p>
+                    <div class="food-item-footer">
+                        <div class="item-price">
+                            <span class="current-price">LKR 650</span>
+                        </div>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <span>4.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+            <button class="close-cart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="cart-items">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+                <small>Add items from restaurants</small>
+            </div>
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span class="subtotal">LKR 0</span>
+            </div>
+            <div class="summary-row">
+                <span>Delivery Fee</span>
+                <span class="delivery-fee">LKR 250</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (8%)</span>
+                <span class="tax-amount">LKR 0</span>
+            </div>
+            <div class="summary-row total">
+                <strong>Total</strong>
+                <strong class="total-price">LKR 0</strong>
+            </div>
+        </div>
+        
+        <button class="btn-primary btn-block checkout-btn">
+            <i class="fas fa-lock"></i>
+            Proceed to Checkout
+        </button>
+        
+        <div class="payment-methods">
+            <p>We accept:</p>
+            <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fas fa-university"></i>
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="cart-overlay"></div>
+
+    <!-- Notification -->
+    <div class="notification">
+        <span class="notification-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
